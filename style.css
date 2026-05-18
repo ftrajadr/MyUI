@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --nav-background: #F3F4F6;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: black; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5); 
+}
+
+.Main-Container {
+    display: flex;
+    max-height: 100vh;
+}
+
+.Navigation-Container {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    overflow: auto;
+    width: 200px;
+    background-color: var(--nav-background);
+    gap: 12px;
+}
+
+.Navigation-Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+    gap: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Navigation-Title svg:nth-child(1) {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.Navigation-Title h1 {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.Navigation-Title svg:nth-child(3) {
+    color: rgba(0, 0, 0, 0.5);
+    width: 15px;
+    height: 15px;
+}
+
+.Navigation-NewProjectButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.Navigation-NewProjectButton a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    width: 200px;
+    height: 30px;
+    font-size: 0.8rem; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.Navigation-SearchInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+.Navigation-SearchInput input {
+    outline: none;
+    background-color: transparent;
+    width: 180px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding-left: 30px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.Navigation-SearchInput svg:nth-child(1) {
+    position: absolute;
+    left: 22px;
+    color: rgba(0, 0, 0, 0.5);
+    width: 12px;
+    height: 12px;
+}
+
+.Navigation-SearchInput svg:nth-child(3) {
+    position: absolute;
+    right: 45px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navigation-SearchInput svg:nth-child(4) {
+    position: absolute;
+    right: 22px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navigation-MainMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 10px;
+}
+
+.Navigation-MainMenu h2 {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.Navigation-MainMenu hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Navigation-MainMenu a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.Navigation-MainMenu a svg {
+    color: black;
+    width: 13px;
+    height: 13px;
+}
+
+.Navigation-Project {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 10px 70px 10px;
+}
+
+.Navigation-Project h2 {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.Navigation-Project hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Navigation-Project a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.Navigation-Project a svg {
+    color: black;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+}
+
+.Navigation-Project a .lucide-trending-up {
+    color: rgba(107, 33, 168, 1);
+    background-color: rgba(107, 33, 168, 0.2);
+    border: 2px solid white;
+    outline: 1px solid rgb(107, 33, 168, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(107, 33, 168, 0.1);
+}
+
+.Navigation-Project a .lucide-shopping-bag {
+    color: rgba(244, 63, 94, 1);
+    background-color: rgba(244, 63, 94, 0.2);
+    border: 2px solid white;
+    outline: 1px solid rgb(244, 63, 94, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(244, 63, 94, 0.1);
+}
+
+.Navigation-Project a .lucide-credit-card {
+    color: rgb(6, 205, 255);
+    background-color: rgba(6, 205, 255, 0.2);
+    border: 2px solid white;
+    outline: 1px solid rgb(6, 205, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(6, 205, 255, 0.1);
+}
+
+.Navigation-Project a .lucide-square-dot {
+    color: rgba(5, 150, 105, 1);
+    background-color: rgba(5, 150, 105, 0.2);
+    border: 2px solid white;
+    outline: 1px solid rgb(5, 150, 105, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(5, 150, 105, 0.1);
+}
+
+.Navigation-Account {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--nav-background);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 198px;
+    height: 60px;
+    padding: 0 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.Account-Photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    background-color: white;
+}
+
+.Account-Photo svg {
+    width: 20px;
+    height: 20px;
+}
+
+.Account-Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.Account-Info h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.Account-Info p {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.Account-Menu {
+    display: flex;
+    align-items: center;
+}
+
+.Account-Menu svg {
+    color: rgba(0, 0, 0, 0.5);
+    width: 15px;
+    height: 15px;
+}
+
+.Navigation-Active {
+    height: 30px;
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Content-Container {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    max-height: 100vh;
+    overflow: auto;
+    background-color: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
