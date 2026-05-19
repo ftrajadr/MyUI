@@ -14,6 +14,7 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 2px;
 }
@@ -29,12 +30,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.5); 
 }
+/* ######### */
 
 .Main-Container {
     display: flex;
     max-height: 100vh;
 }
 
+/* Navigation */
 .Navigation-Container {
     display: flex;
     flex-direction: column;
@@ -45,17 +48,9 @@ body {
     gap: 12px;
     transition: width 0.3s ease;
 }
-.Navigation-Container.active {
+.Navigation-Container.Hide {
     width: 0;
     overflow: hidden;
-}
-
-.Navigation-Button {
-    cursor: pointer;    
-}
-
-.Navigation-Button:hover {
-    color: rgba(0, 0, 0) !important;
 }
 
 .Navigation-Title {
@@ -67,7 +62,7 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Navigation-Title svg:nth-child(1) {
+.Navigation-Title .lucide-mail-icon {
     color: white;
     background-color: black;
     border-radius: 5px;
@@ -80,10 +75,15 @@ body {
     font-weight: 600;
 }
 
-.Navigation-Title svg:nth-child(3) {
+.Navigation-Button {
     color: rgba(0, 0, 0, 0.5);
     width: 15px;
     height: 15px;
+}
+
+.Navigation-Button:hover {
+    cursor: pointer;   
+    color: rgba(0, 0, 0);
 }
 
 .Navigation-NewProjectButton {
@@ -109,6 +109,13 @@ body {
     font-weight: 500;
 }
 
+.Navigation-NewProjectButton a .plus-icon {
+    width: 13px;
+    height: 13px;
+    color: black;
+    margin-right: 3px;
+}
+
 .Navigation-SearchInput {
     display: flex;
     justify-content: center;
@@ -128,7 +135,7 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.Navigation-SearchInput svg:nth-child(1) {
+.Navigation-SearchInput .lucide-search-icon {
     position: absolute;
     left: 22px;
     color: rgba(0, 0, 0, 0.5);
@@ -136,7 +143,7 @@ body {
     height: 12px;
 }
 
-.Navigation-SearchInput svg:nth-child(3) {
+.Navigation-SearchInput .lucide-command-icon {
     position: absolute;
     right: 45px;
     color: black;
@@ -148,7 +155,7 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.Navigation-SearchInput svg:nth-child(4) {
+.Navigation-SearchInput .letter-k-icon {
     position: absolute;
     right: 22px;
     color: black;
@@ -161,11 +168,12 @@ body {
 }
 
 .Navigation-Item {
+    overflow-x: hidden;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     margin-bottom: 60px;
-    gap: 12px;;
+    gap: 12px;
 }
 
 .Navigation-MainMenu {
@@ -286,7 +294,7 @@ body {
     gap: 10px;
 }
 
-.Account-Photo {
+.Navigation-Account-Photo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -297,34 +305,34 @@ body {
     background-color: white;
 }
 
-.Account-Photo svg {
+.Navigation-Account-Photo svg {
     width: 20px;
     height: 20px;
 }
 
-.Account-Info {
+.Navigation-Account-Info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
 }
 
-.Account-Info h3 {
+.Navigation-Account-Info h3 {
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-.Account-Info p {
+.Navigation-Account-Info p {
     font-size: 0.7rem;
     color: rgba(0, 0, 0, 0.8);
 }
 
-.Account-Menu {
+.Navigation-Account-Menu {
     display: flex;
     align-items: center;
 }
 
-.Account-Menu svg {
+.Navigation-Account-Menu svg {
     color: rgba(0, 0, 0, 0.5);
     width: 15px;
     height: 15px;
@@ -338,7 +346,9 @@ body {
     border-radius: 16px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+/* ########## */
 
+/* Home Content */
 .Content-Container {
     display: flex;
     flex-direction: column;
@@ -353,77 +363,199 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 10px;
+    padding: 10px;
     height: 50.67px;
-    gap: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Content-Title div {
+.Content-Title .Navigation-Title-Left {
     display: flex;
     align-items: center;
     gap: 10px;
-    
 }
 
-.Content-Title div h2 {
+.Content-Title .Navigation-Title-Left h2 {
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-.Content-Title div .Navigation-Button {
-    color: rgba(0, 0, 0, 0.5);
-    width: 15px;
-    height: 15px;
-}
-
-.Content-Title div .lucide-chevron-right {
+.Content-Title .Navigation-Title-Left .lucide-chevron-right {
     width: 10px;
     height: 10px;
     color: rgba(0, 0, 0, 0.5)
 }
 
-.Content-Title div .Navigation-Share-Button {
+.Content-Title .Navigation-Title-Right {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-right: 10px;
+}
+
+.Content-Title .Navigation-Title-Right a {
+    display: flex;
     align-items: center;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.8);
-    width: 80px;
-    height: 30px;
     font-size: 0.8rem; 
-    font-weight: 500;
-    gap: 5px;
+    font-weight: 600;
 }
 
-.Content-Title div .Navigation-Share-Button .lucide-move-diagonal {
-    color: rgba(0, 0, 0, 0.5);
-    width: 15px;
-    height: 15px;
+.Content-Title .Navigation-Title-Right a .share-icon {
+    color: rgba(0, 0, 0, 0.8);
+    width: 30px;
+    height: 30px;
 }
 
-.Content-Title div .lucide-ellipsis {
-    width: 15px;
-    height: 15px;
-    color: rgba(0, 0, 0, 0.5);
+.Content-Title .Navigation-Title-Right .ellipsis-icon {
+    width: 25px;
+    height: 25px;
+    color: black;
 }
 
 .Content-Item {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 10px;
 }
 
 .Content-Item-Card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Content-Item-Card-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
+}
+
+.Content-Item-Card-Header-Title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Content-Item-Card-Header-Title .Acme-Cloud {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    color: rgba(110, 59, 229, 1);
+    background-color: rgba(110, 59, 229, 0.3);
+    border: 2px solid white;
     border-radius: 5px;
-    width: calc(100% / 3);
+    outline: 2px solid rgba(110, 59, 229, 0.1);
+    box-shadow: 0px 2px 4px rgba(110, 59, 229, 0.3);
 }
 
-.Content-Item-Card-Info {
-    background-color: red;
-    border: 1px solid black;
+.Content-Item-Card-Header-Title h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-.Navigation-Container:not(.active) + .Content-Container .Navigation-Button {
+.Content-Item-Card-Header .Content-Item-Card-Header-Status {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.Content-Item-Card-Main {
+    display: flex;
+    flex-direction: column;
+}
+
+.Content-Item-Card-Main-Detail {
+    display: flex;
+    padding: 5px 10px 0 15px;
+}
+
+.Content-Item-Card-Main-Detail .Custom-Border {
+    width: 8px;
+    height: 15px;
+    background: #0075a3;
+    background: linear-gradient(0deg,rgba(0, 117, 163, 1) 0%, rgba(87, 87, 199, 1) 15%, rgba(222, 83, 237, 0.6) 100%);
+    border-radius: 16px;
+    margin-top: 2px;
+}
+
+.Content-Item-Card-Main-Detail p {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.8);
+    margin-left: 5px;
+    font-style: italic;
+}
+
+.Content-Item-Card-Main-Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.Content-Item-Card-Main-Info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.Content-Item-Card-Main-Info div h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.Content-Item-Card-Main-Info div p {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.Content-Item-Card-Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px 10px;
+}
+
+.Content-Item-Card-Footer p {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.7rem;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 1);
+}
+
+.Content-Item-Card-Footer p .Clock-Icon {
+    width: 12px;
+    height: 12px;
+}
+
+.Content-Item-Card-Footer a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Content-Item-Card-Footer a .Right-Arrow {
+    width: 12px;
+    height: 12px;
+}
+/* ############ */
+
+/* CSS Logic */
+.Navigation-Container:not(.Hide) + .Content-Container .Navigation-Button {
     display: none;
 }
+/* ######### */
