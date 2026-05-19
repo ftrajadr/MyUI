@@ -38,11 +38,24 @@ body {
 .Navigation-Container {
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
-    overflow: auto;
+    position: relative;
+    height: 100vh;
     width: 200px;
     background-color: var(--nav-background);
     gap: 12px;
+    transition: width 0.3s ease;
+}
+.Navigation-Container.active {
+    width: 0;
+    overflow: hidden;
+}
+
+.Navigation-Button {
+    cursor: pointer;    
+}
+
+.Navigation-Button:hover {
+    color: rgba(0, 0, 0) !important;
 }
 
 .Navigation-Title {
@@ -147,6 +160,14 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.Navigation-Item {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    gap: 12px;;
+}
+
 .Navigation-MainMenu {
     display: flex;
     flex-direction: column;
@@ -185,7 +206,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 0 10px 70px 10px;
+    padding: 10px;
 }
 
 .Navigation-Project h2 {
@@ -320,10 +341,89 @@ body {
 
 .Content-Container {
     display: flex;
+    flex-direction: column;
     flex: 1;
-    padding: 10px;
-    max-height: 100vh;
-    overflow: auto;
+    height: 100vh;
     background-color: white;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+.Content-Title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    height: 50.67px;
+    gap: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Content-Title div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.Content-Title div h2 {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.Content-Title div .Navigation-Button {
+    color: rgba(0, 0, 0, 0.5);
+    width: 15px;
+    height: 15px;
+}
+
+.Content-Title div .lucide-chevron-right {
+    width: 10px;
+    height: 10px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+.Content-Title div .Navigation-Share-Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+    width: 80px;
+    height: 30px;
+    font-size: 0.8rem; 
+    font-weight: 500;
+    gap: 5px;
+}
+
+.Content-Title div .Navigation-Share-Button .lucide-move-diagonal {
+    color: rgba(0, 0, 0, 0.5);
+    width: 15px;
+    height: 15px;
+}
+
+.Content-Title div .lucide-ellipsis {
+    width: 15px;
+    height: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.Content-Item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Content-Item-Card {
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% / 3);
+}
+
+.Content-Item-Card-Info {
+    background-color: red;
+    border: 1px solid black;
+}
+
+.Navigation-Container:not(.active) + .Content-Container .Navigation-Button {
+    display: none;
 }
