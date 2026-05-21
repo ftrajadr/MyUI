@@ -17,6 +17,7 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 2px;
+  height: 2px;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,54 +43,64 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 100%;
+    max-width: 200px;
     height: 100vh;
-    width: 200px;
     background-color: var(--nav-background);
-    gap: 12px;
-    transition: width 0.3s ease;
+    gap: 10px;
+    white-space: nowrap;
+    transition: max-width 0.3s ease;
 }
+
 .Navigation-Container.Hide {
-    width: 0;
+    max-width: 0;
     overflow: hidden;
 }
 
 .Navigation-Title {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 10px;
-    gap: 5px;
+    min-height: 60px;
+    max-height: 60px;
+    padding: 0 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Navigation-Title .lucide-mail-icon {
+.Navigation-Title-Icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Navigation-Title-Icon .lucide-mail-icon {
     color: white;
     background-color: black;
     border-radius: 5px;
     padding: 3px;
 }
 
-.Navigation-Title h1 {
-    flex: 1;
+.Navigation-Title-Icon h1 {
     font-size: 0.9rem;
     font-weight: 600;
 }
 
 .Navigation-Button {
-    color: rgba(0, 0, 0, 0.5);
-    width: 15px;
-    height: 15px;
+    color: gray;
+    width: 16px;
+    height: 16px;
 }
 
 .Navigation-Button:hover {
     cursor: pointer;   
-    color: rgba(0, 0, 0);
+    color: black;
 }
 
 .Navigation-NewProjectButton {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     padding: 0 10px;
 }
 
@@ -98,22 +109,24 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    width: 100%;
+    padding: 8px 0;
     color: black;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 100px;
-    width: 200px;
-    height: 30px;
-    font-size: 0.8rem; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-weight: 500;
+    gap: 5px;
 }
 
-.Navigation-NewProjectButton a .plus-icon {
+.Navigation-NewProjectButton a svg {
     width: 13px;
     height: 13px;
-    color: black;
-    margin-right: 3px;
+}
+
+.Navigation-NewProjectButton a p {
+    font-size: 0.8rem; 
+    font-weight: 500;
 }
 
 .Navigation-SearchInput {
@@ -121,22 +134,24 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 100%;
     padding: 0 10px;
 }
 
 .Navigation-SearchInput input {
-    outline: none;
+    width: 100%;
+    padding: 8px 60px 8px 30px;
     background-color: transparent;
-    width: 180px;
-    height: 30px;
+    outline: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 100px;
-    padding-left: 30px;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .Navigation-SearchInput .lucide-search-icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     left: 22px;
     color: rgba(0, 0, 0, 0.5);
     width: 12px;
@@ -145,6 +160,8 @@ body {
 
 .Navigation-SearchInput .lucide-command-icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 45px;
     color: black;
     background-color: white;
@@ -157,6 +174,8 @@ body {
 
 .Navigation-SearchInput .letter-k-icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 22px;
     color: black;
     background-color: white;
@@ -167,20 +186,19 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.Navigation-Item {
+.Navigation-Menu {
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
-    gap: 12px;
+    padding: 0 10px 70px 10px;
+    gap: 20px;
 }
 
 .Navigation-MainMenu {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 0 10px;
+    gap: 10px;
 }
 
 .Navigation-MainMenu h2 {
@@ -213,8 +231,7 @@ body {
 .Navigation-Project {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 10px;
+    gap: 10px;
 }
 
 .Navigation-Project h2 {
@@ -281,20 +298,36 @@ body {
     box-shadow: 0px 2px 4px rgba(5, 150, 105, 0.1);
 }
 
+.Navigation-Active {
+    height: 30px;
+    padding-left: 10px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .Navigation-Account {
     display: flex;
     position: absolute;
+    justify-content: space-between;
+    align-items: center;
     bottom: 0;
     background-color: var(--nav-background);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    width: 198px;
-    height: 60px;
+    width: 100%;
+    min-height: 60px;
+    max-height: 60px;
     padding: 0 10px;
+}
+
+.Navigation-Account-Info {
+    display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.Navigation-Account-Photo {
+.Navigation-Account-Info-Photo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,27 +335,26 @@ body {
     height: 40px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
-.Navigation-Account-Photo svg {
+.Navigation-Account-Info-Photo svg {
     width: 20px;
     height: 20px;
 }
 
-.Navigation-Account-Info {
+.Navigation-Account-Info-Text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 1;
 }
 
-.Navigation-Account-Info h3 {
+.Navigation-Account-Info-Text h2 {
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-.Navigation-Account-Info p {
+.Navigation-Account-Info-Text p {
     font-size: 0.7rem;
     color: rgba(0, 0, 0, 0.8);
 }
@@ -337,15 +369,6 @@ body {
     width: 15px;
     height: 15px;
 }
-
-.Navigation-Active {
-    height: 30px;
-    padding-left: 10px;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
 /* ########## */
 
 /* Home Content */
@@ -353,71 +376,202 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
+    width: 100%;
     height: 100vh;
+    gap: 10px;
     background-color: white;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
-    overflow: auto;
+    overflow: hidden;
 }
 
 .Content-Title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    height: 50.67px;
+    min-height: 60px;
+    max-height: 60px;
+    padding: 0 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Content-Title .Navigation-Title-Left {
+.Content-Title-Left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.Content-Title-Left-Button {
+    display: flex;
+    align-items: center;
+}
+
+.Content-Title-Left-Info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.Content-Title-Left-Info h2 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.Content-Title-Left-Info .lucide-chevron-right {
+    color: rgba(0, 0, 0, 0.5);
+    width: 12px;
+    height: 12px;
+}
+
+.Content-Title-Right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Content-Title-Right a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.Content-Title-Right a .share-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.Content-Title-Right .ellipsis-icon {
+    width: 30px;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.Content-Detail {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px 10px;
+    gap: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.Content-Head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.Content-Head-Left {
+    display: flex;
+    flex-direction: column;
+}
+
+.Content-Head-Left h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.Content-Head-Left-Info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.Content-Head-Left-Info p {
+    font-size: 0.6rem;
+    color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+.Content-Head-Right {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.Content-Title .Navigation-Title-Left h2 {
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.Content-Title .Navigation-Title-Left .lucide-chevron-right {
-    width: 10px;
-    height: 10px;
-    color: rgba(0, 0, 0, 0.5)
-}
-
-.Content-Title .Navigation-Title-Right {
+.Content-Head-Right-Display {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2px;
 }
 
-.Content-Title .Navigation-Title-Right a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 0.8rem; 
-    font-weight: 600;
-}
-
-.Content-Title .Navigation-Title-Right a .share-icon {
-    color: rgba(0, 0, 0, 0.8);
-    width: 30px;
-    height: 30px;
-}
-
-.Content-Title .Navigation-Title-Right .ellipsis-icon {
+.Content-Head-Right-Display svg {
     width: 25px;
     height: 25px;
-    color: black;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Content-Head-Right-Display-Active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.Content-Head-Right-Filter {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    gap: 0px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.Content-Head-Right-Filter svg {
+    width: 25px;
+    height: 25px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.Content-Head-Right-Filter p {
+    padding-right: 7px;
+}
+
+.Content-Head-Right-NewClient {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    gap: 0px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Content-Head-Right-NewClient svg {
+    width: 25px;
+    height: 25px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.Content-Head-Right-NewClient p {
+    padding-right: 7px;
+    white-space: nowrap;
 }
 
 .Content-Item {
     display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 10px;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .Content-Item-Card {
@@ -460,7 +614,7 @@ body {
 
 .Content-Item-Card-Header .Content-Item-Card-Header-Status {
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 100;
 }
 
 .Content-Item-Card-Main {
@@ -559,3 +713,12 @@ body {
     display: none;
 }
 /* ######### */
+
+
+/* Media Query */
+@media screen and (max-width: 473px) {
+    .Navigation-Container {
+        max-width: 100%;
+    }
+}
+/* ########### */
